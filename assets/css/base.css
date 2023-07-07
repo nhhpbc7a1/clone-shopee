@@ -35,6 +35,11 @@ html {
     flex-wrap: wrap;
 }
 
+/* Speed up */
+.disappear{
+    display: none;
+}
+
 /* Animation */
 
 @keyframes fadeIn {
@@ -46,25 +51,14 @@ html {
     }
 }
 
-@keyframes growIn {
+@keyframes growth {
     from {
         opacity: 0;
-        transform: scale(0);
+        transform: scale(var(--growth-from));
     }
     to {
         opacity: 1;
-        transform: 1;
-    }
-}
-
-@keyframes growOut {
-    from {
-        opacity: 1;
-        transform: 1;
-    }
-    to {
-        opacity: 0;
-        transform: scale(0);
+        transform: scale(var(--growth-to));
     }
 }
 
@@ -76,6 +70,7 @@ html {
     left: 0;
     right: 0;
     display: flex;
+    animation: fadeIn linear 0.1s;
 }
 
 .modal__overlay {
@@ -86,25 +81,52 @@ html {
 }
 
 .modal__body {
+    --growth-from : 0.7;
+    --growth-to: 1;
     margin: auto;
     position: relative;
-    background-color: var(--white-color);
-    border-radius: 5px;
+    animation: growth linear 0.1s;
 }
 
 /* Buttun style */
 
 .btn{
     min-width: 142px;
-    height: 36px;
+    height: 34px;
     padding: 0;
     text-decoration: none;
     border: none;
     border-radius: 2px;
     font-size: 1.5rem;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--white-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 5px;
+    line-height: 1.6rem;
+}
+
+.btn.btn--size-s{
+    height: 32px;
+    font-size: 1.2rem;
+}
+
+.btn.btn--normal:hover{
+    background-color: rgba(0,0,0,0.1);
 }
 
 .btn.btn--primary{
     color: var(--white-color);
     background-color: var(--primary-color);
+}
+
+.btn.btn--disabled{
+    cursor: default;
+    color: #ccc;
+    background-color: #666;
 }
