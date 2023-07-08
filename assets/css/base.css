@@ -4,6 +4,11 @@
     --text-color: #333;
     --primary-color:rgb(246, 63, 46);
     --border-color: #dbdbdb;
+
+    --header-height: 120px;
+    --navbar-height: 34px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    
 }
 
 * {
@@ -21,9 +26,10 @@ html {
 }
 
 .grid {
-    width: 120rem;
+    width: 1200px;
     max-width: 100%;
     margin: 0 auto;
+    height: var(--header-height);
 }
 
 .grid__full-width {
