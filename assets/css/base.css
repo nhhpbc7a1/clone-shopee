@@ -57,9 +57,9 @@ html {
     }
 }
 
-@keyframes growth {
+@keyframes growthIn {
     from {
-        opacity: 0;
+        opacity: 0.3;
         transform: scale(var(--growth-from));
     }
     to {
@@ -67,6 +67,18 @@ html {
         transform: scale(var(--growth-to));
     }
 }
+@keyframes growthOut {
+    from {
+        opacity: 1;
+        transform: scale(var(--growth-from));
+    }
+    to {
+        opacity: 0.3;
+        transform: scale(var(--growth-to));
+    }
+}
+
+
 
 /* Modal */
 .modal {
