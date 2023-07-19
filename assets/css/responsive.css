@@ -1,0 +1,157 @@
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    :root{
+        --header-height: 68px;
+        --navbar-height: 0px;    
+    }
+
+    .header__cart-list {
+        position: fixed;
+        top: var(--header-height);
+        right: 0px;
+        width: 100%;
+        padding: 0 calc((100% - 644px) / 2);
+    }
+
+    .header__cart-list::after{
+        display: none;
+    }
+
+    .header{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    .app__container{
+        margin-top: calc(var(--header-height) + 20px);
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet{
+        display: none;
+    }
+
+    .header__cart {
+        width: 74px;
+        text-align: right;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px){
+    :root{
+        --header-height: 54px;
+    }
+    .hide-on-mobile{
+        display: none;
+    }
+
+    .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .header-with-search{
+        justify-content: space-between;
+    }
+
+    .header__cart{
+        width: 64px;
+    }
+
+    .header__logo{
+        width: unset;
+    }
+
+    .header__search{
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        z-index: 1;
+        height: var(--header-sortbar-height);
+        padding: 0 8px;
+        border-bottom: 1px solid #e5e5e5;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        animation: mobileSearchSideIn linear 0.3s;
+        display: none;
+    }
+
+    @keyframes mobileSearchSideIn{
+        from{
+            top: calc(var(--header-height) / 2);
+            opacity: 0;
+        }
+        to {
+            top: var(--header-height);
+            opacity: 1;
+        }
+    }
+    .header__search-btn{
+        height: calc(var(--header-sortbar-height) - 8px); 
+        line-height: 100%;
+    }
+    .header__search-btn i{
+        font-size: 2.2rem;
+    }
+
+    .header__search-history{
+        position: fixed;
+        left: 0;
+        top: calc(var(--header-height) + var(--header-sortbar-height));
+        width: 100%;
+    }
+    .pagination-item {
+        margin: 0 4px;
+    }
+    .pagination-item__link{
+        --height: 28px;
+        min-width: 36px;
+    }
+    .header__logo-img {
+        width: 110px;
+    }
+    .footer-wrap-mid,
+    .footer-wrap-bot{
+        padding: 0 16px;
+    }
+    .footer-wrap-mid{
+        padding-bottom: 24px;
+    }
+
+    .footer__download-apps{
+        flex: unset;
+    }
+    .footer__heading,
+    .footer-list,
+    .footer__download-apps,
+    .footer__download{
+        text-align: center;
+    }
+    .footer__download{
+        justify-content: center;
+    }
+}
+
+/* PC */
+@media (min-width: 1024px){
+    .hide-on-pc{
+        display: none;
+    }
+
+}
+
+/* Tablet , PC */
+@media (min-width: 740px) {
+    .hide-on-tablet-pc{
+        display: none;
+    }
+}
